@@ -65,13 +65,14 @@ function draw() {
           particle=null;
         }
 
-        if(count>=5){
-          gameState = "end"
+        if(count===5){
+          gameState = "end";
+          count=null;
         }
     }
   } 
 } else{
-    if(gameState === "end"){
+    if(gameState === "end"){      
       text("Game Over",400,450);
     }
   }
@@ -93,5 +94,6 @@ function mousePressed(){
   if(gameState!=="end"){
     particle = new Particle(mouseX,10,10);
     count++;
+    console.log(count);
   }
 }
