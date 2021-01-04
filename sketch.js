@@ -48,21 +48,21 @@ function draw() {
     if(particle!==null){
       particle.display();
 
-      if(particle.body.position.y>760){
+      if(particle!==null && particle.body.position.y>760){
 
-        if(particle.body.position.x<300){
+        if(particle!==null && particle.body.position.x<300){
           score=score+500;
-          // particle=null;
+          particle=null;
        }
 
-        if(particle.body.position.x>301 && particle.body.position.x<600){
+        if(particle!==null && particle.body.position.x>301 && particle.body.position.x<600){
           score=score+100;
-          // particle=null;
+          particle=null;
         }
 
-        if(particle.body.position.x>601 && particle.body.position.x<900){
+        if(particle!==null && particle.body.position.x>601 && particle.body.position.x<900){
           score=score+200;
-          // particle=null;
+          particle=null;
         }
 
         if(count===5){
@@ -109,7 +109,6 @@ function mousePressed(){
   particle=null;
   if(gameState!=="end"){
     particle = new Particle(mouseX,10,10);
-    count=count+1;
-    console.log(count);
+    count++;
   }  
 }
